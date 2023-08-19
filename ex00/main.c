@@ -12,8 +12,10 @@
 
 #include <unistd.h>
 
+int	rush(int x, int y);
+
 int	main(void)
 {
-	rush(-8, 2);
+	rush(123, 42);
 	return (0);
 }	
