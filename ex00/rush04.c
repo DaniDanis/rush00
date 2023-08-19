@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush0X.c                                           :+:      :+:    :+:   */
+/*   rush04.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcouto-f <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dadantas <dadantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 11:09:19 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/08/19 14:09:53 by cnatanae         ###   ########.fr       */
+/*   Updated: 2023/08/19 16:25:31 by dadantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 char	ft_putchar(char c);
 
-void	ft_adicionarchar(int xx, int x, int y, int yy)
+void	ft_write_line(int cord_x, int cord_y, int x, int y)
 {
-	while (xx <= x)
+	while (cord_x <= x)
 	{
-		if ((xx == 1 && yy == 1) || (xx == x && yy == y))
+		if ((cord_x == 1 && cord_y == 1) || (cord_x == x && cord_y == y))
 		{
 			ft_putchar('A');
 		}
-		else if ((yy == 1 && xx == x) || (xx == 1 && yy == y))
+		else if ((cord_y == 1 && cord_x == x) || (cord_x == 1 && cord_y == y))
 		{
 			ft_putchar('C');
 		}
-		else if (yy == 1 || xx == 1 || yy == y || xx == x)
+		else if (cord_y == 1 || cord_x == 1 || cord_y == y || cord_x == x)
 		{
 			ft_putchar('B');
 		}
@@ -34,26 +34,26 @@ void	ft_adicionarchar(int xx, int x, int y, int yy)
 		{
 			ft_putchar(' ');
 		}
-		xx++;
+		cord_x++;
 	}
 }
 
 void	rush(int x, int y)
 {
-	int	xx;
-	int	yy;
+	int	cord_x;
+	int	cord_y;
 
 	if (x <= 0 || y <= 0)
 	{
-		write(1, "Os números indicados não são válidos. Fim do programa.", 58);
+		write(1, "Negative numbers and 0 are not allowed.", 39);
 		return ;
 	}
-	yy = 1;
-	while (yy <= y)
+	cord_y = 1;
+	while (cord_y <= y)
 	{
-		xx = 1;
-		ft_adicionarchar(xx, x, y, yy);
-		yy++;
+		cord_x = 1;
+		ft_write_line (cord_x, cord_y, x, y);
+		cord_y++;
 		ft_putchar('\n');
 	}
 }
