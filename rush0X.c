@@ -6,52 +6,43 @@
 /*   By: gcouto-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 11:09:19 by gcouto-f          #+#    #+#             */
-/*   Updated: 2023/08/19 12:06:12 by gcouto-f         ###   ########.fr       */
+/*   Updated: 2023/08/19 12:46:55 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "ft_putchar.c"
-
+#include "rush0X.c"
 
 void rush(int x, int y)
 {
-	int		xx;
-	int 	yy;
+	int		xx;//xx é a coluna
+	int 	yy;//yy é a linha
 
-	xx = 1;
-	yy = 1;
-
-	if (x<= 0 || y <= 0)
+	if (x<= 0 || y <= 0)//tratamento de erro
 	{
-	write(1, "Nao foi possivel desenhar", 26);
+	write(1, "Os números indicados não são válidos. Fim do programa.", 58);
+	x =0;
+	y =0;
 	}
 
-	while(yy <= y)
+	yy = 1;
+	
+	while(yy <= y)//inicio lógica
 	{
 	xx = 1;	
 	while (xx <= x)
 	{
 	if
-		(xx == 1 && yy == 1)
+		((xx == 1 && yy == 1) ||(xx == x && yy == y))
 	{
 		ft_putchar('A');
 	}
 	else if
-		(yy == 1 && xx == x)
+		((yy == 1 && xx == x) || (xx == 1 && yy == y))
 	{
 		ft_putchar('C');
 	}
-	else if
-		(xx == 1 && yy == y)
-	{
-		ft_putchar('C');
-	}
-	else if
-		(xx == x && yy == y)
-	{
-		ft_putchar('A');
-	}		
+	
 	else if
 		(yy == 1 || xx == 1 || yy == y || xx == x)
 	{
@@ -70,7 +61,7 @@ void rush(int x, int y)
 	xx++;
 	}
 	
-}
+}//fim lógica
 }
 
 
