@@ -6,7 +6,7 @@
 /*   By: cnatanae <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 15:06:39 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/08/19 16:59:30 by cnatanae         ###   ########.fr       */
+/*   Updated: 2023/08/19 23:19:49 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_write_square(int x, int y)
 	}
 }
 
-void	rush00(int x, int y)
+void	ft_rush00(int x, int y)
 {
 	if ((x <= 0) || (y <= 0))
 	{
